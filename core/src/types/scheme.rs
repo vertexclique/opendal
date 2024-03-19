@@ -72,6 +72,8 @@ pub enum Scheme {
     Dbfs,
     /// [fs][crate::services::Fs]: POSIX alike file system.
     Fs,
+    /// [fs][crate::services::Nfs]: Asynchronous POSIX alike file system.
+    Nfs,
     /// [ftp][crate::services::Ftp]: FTP backend.
     Ftp,
     /// [gcs][crate::services::Gcs]: Google Cloud Storage backend.
@@ -407,6 +409,7 @@ impl From<Scheme> for &'static str {
             Scheme::Etcd => "etcd",
             Scheme::Dbfs => "dbfs",
             Scheme::Fs => "fs",
+            Scheme::Nfs => "nucleifs",
             Scheme::Gcs => "gcs",
             Scheme::Ghac => "ghac",
             Scheme::Gridfs => "gridfs",

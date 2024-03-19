@@ -297,6 +297,7 @@ dependencies = [
  "blocking",
  "futures-lite 2.2.0",
  "once_cell",
+ "tokio",
 ]
 
 [[package]]
@@ -321,9 +322,15 @@ dependencies = [
 
 [[package]]
 name = "async-io"
+<<<<<<< HEAD:core/Cargo.lock
 version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f97ab0c5b00a7cdbe5a371b9a782ee7be1316095885c8a4ea1daf490eb0ef65"
+=======
+version = "2.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb41eb19024a91746eba0773aa5e16036045bbf45733766661099e182ea6a744"
+>>>>>>> Initial work:Cargo.lock
 dependencies = [
  "async-lock 3.3.0",
  "cfg-if",
@@ -332,7 +339,11 @@ dependencies = [
  "futures-lite 2.2.0",
  "parking",
  "polling 3.3.2",
+<<<<<<< HEAD:core/Cargo.lock
  "rustix 0.38.31",
+=======
+ "rustix 0.38.25",
+>>>>>>> Initial work:Cargo.lock
  "slab",
  "tracing",
  "windows-sys 0.52.0",
@@ -3654,6 +3665,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55"
 
 [[package]]
+name = "lever"
+version = "0.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5823897ba55199b5300dbf5551027f66802c9dcf2f3a0b4f8c46d750124f57f2"
+dependencies = [
+ "anyhow",
+ "crossbeam-epoch",
+ "itertools 0.10.5",
+ "lazy_static",
+ "log",
+ "parking_lot 0.11.2",
+ "slice-group-by",
+ "thiserror",
+]
+
+[[package]]
 name = "lexical"
 version = "6.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4405,6 +4432,38 @@ dependencies = [
 ]
 
 [[package]]
+name = "nuclei"
+version = "0.4.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "708cc2eaca5debf2652cd0de66e16e1a9587ed63af886c04d82a0bce054a532d"
+dependencies = [
+ "ahash 0.8.7",
+ "async-global-executor",
+ "crossbeam-channel",
+ "futures",
+ "lever",
+ "libc",
+ "nuclei-attributes",
+ "once_cell",
+ "os_socketaddr",
+ "pin-project-lite",
+ "pin-utils",
+ "rustix 0.38.25",
+ "rustix-uring",
+ "socket2 0.3.19",
+]
+
+[[package]]
+name = "nuclei-attributes"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "86301c1ea5b0ddf9ccf79de4d15c17d53e5b7923f681de990650704f28bc27d1"
+dependencies = [
+ "quote",
+ "syn 1.0.109",
+]
+
+[[package]]
 name = "num-bigint"
 version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4556,7 +4615,12 @@ dependencies = [
  "flagset",
  "foundationdb",
  "futures",
+<<<<<<< HEAD:core/Cargo.lock
  "getrandom 0.2.12",
+=======
+ "futures-lite 2.2.0",
+ "getrandom 0.2.11",
+>>>>>>> Initial work:Cargo.lock
  "governor",
  "hdfs-native",
  "hdrs",
@@ -4573,12 +4637,14 @@ dependencies = [
  "moka",
  "mongodb",
  "mysql_async",
+ "nuclei",
  "once_cell",
  "openssh",
  "openssh-sftp-client",
  "opentelemetry",
  "percent-encoding",
  "persy",
+ "pin-project-lite",
  "pretty_assertions",
  "probe",
  "prometheus",
@@ -4814,6 +4880,16 @@ checksum = "04d84ee66570a6460dc6143a5c4835f3a4179201ce91c25fc717d4eb3dc31db9"
 dependencies = [
  "dlv-list",
  "hashbrown 0.14.3",
+]
+
+[[package]]
+name = "os_socketaddr"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fa149f3ec09cadeb41968390fcd71e6ea038a9a373d1d4eb070f4d9484d4b244"
+dependencies = [
+ "libc",
+ "winapi",
 ]
 
 [[package]]
@@ -5197,7 +5273,11 @@ dependencies = [
  "cfg-if",
  "concurrent-queue",
  "pin-project-lite",
+<<<<<<< HEAD:core/Cargo.lock
  "rustix 0.38.31",
+=======
+ "rustix 0.38.25",
+>>>>>>> Initial work:Cargo.lock
  "tracing",
  "windows-sys 0.52.0",
 ]
@@ -6326,6 +6406,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "rustix-uring"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2f180cb36639fbd3e5e12812e1e18d3b93ca05648e94bc8edc8d48bf5089cace"
+dependencies = [
+ "bitflags 2.4.1",
+ "rustix 0.38.25",
+]
+
+[[package]]
 name = "rustls"
 version = "0.21.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6824,6 +6914,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "slice-group-by"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f7474f0b646d228360ab62ed974744617bc869d959eac8403bfa3665931a7fb"
+
+[[package]]
 name = "smallvec"
 version = "1.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6865,6 +6961,17 @@ name = "snap"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1b6b67fb9a61334225b5b790716f609cd58395f895b3fe8b328786812a40bc3b"
+
+[[package]]
+name = "socket2"
+version = "0.3.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "122e570113d28d773067fab24266b66753f6ea915758651696b6e35e49f88d6e"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "winapi",
+]
 
 [[package]]
 name = "socket2"

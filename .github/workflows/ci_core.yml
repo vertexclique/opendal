@@ -178,6 +178,7 @@ jobs:
             # FIXME this requires a preinstalled fdb library
             # services-foundationdb
             services-fs
+            services-nfs
             services-ftp
             services-gcs
             services-gdrive
