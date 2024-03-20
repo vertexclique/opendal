@@ -121,7 +121,7 @@ services-dropbox = []
 services-etcd = ["dep:etcd-client", "dep:bb8"]
 services-foundationdb = ["dep:foundationdb"]
 services-fs = ["tokio/fs"]
-services-nfs = ["nuclei", "pin-project-lite", "futures-lite"]
+services-nucleifs = ["nuclei", "pin-project-lite", "futures-lite"]
 services-ftp = ["dep:suppaftp", "dep:bb8", "dep:async-tls"]
 services-gcs = [
   "dep:reqsign",

@@ -25,7 +25,9 @@ use uuid::Uuid;
 
 use crate::raw::*;
 use crate::*;
-use crate::services::nucleifs::reader::{AsyncFileReader};
+use crate::services::nucleifs::lister::AsyncFsLister;
+use crate::services::nucleifs::reader::{AsyncFsReader};
+use crate::services::nucleifs::writer::AsyncFsWriter;
 
 /// Asynchronous POSIX alike file system.
 #[doc = include_str!("docs.md")]
@@ -76,8 +78,8 @@ impl NucleiFsBuilder {
 }
 
 impl Builder for NucleiFsBuilder {
-    const SCHEME: Scheme = Scheme::Nfs;
-    type Accessor = NfsBackend;
+    const SCHEME: Scheme = Scheme::Nucleifs;
+    type Accessor = NucleifsBackend;
 
     fn from_map(map: HashMap<String, String>) -> Self {
         let mut builder = NucleiFsBuilder::default();
@@ -157,7 +159,7 @@ impl Builder for NucleiFsBuilder {
             .unwrap_or(Ok(None))?;
 
         debug!("backend build finished: {:?}", &self);
-        Ok(NfsBackend {
+        Ok(NucleifsBackend {
             root,
             atomic_write_dir,
         })
@@ -166,7 +168,7 @@ impl Builder for NucleiFsBuilder {
 
 /// Backend is used to serve `Accessor` support for async POSIX alike fs.
 #[derive(Debug, Clone)]
-pub struct NfsBackend {
+pub struct NucleifsBackend {
     root: PathBuf,
     atomic_write_dir: Option<PathBuf>,
 }
@@ -178,16 +180,16 @@ fn tmp_file_of(path: &str) -> String {
     format!("{name}.{uuid}")
 }
 
-impl NfsBackend {
+impl NucleifsBackend {
 
 }
 
 #[async_trait]
-impl Accessor for NfsBackend {
-    type Reader = AsyncFileReader;
-    type Writer = ();
-    type Lister = ();
-    type BlockingReader = oio::StdReader<std::fs::File>;
+impl Accessor for NucleifsBackend {
+    type Reader = AsyncFsReader;
+    type Writer = AsyncFsWriter;
+    type Lister = AsyncFsLister;
+    type BlockingReader = ();
     type BlockingWriter = ();
     type BlockingLister = ();
 

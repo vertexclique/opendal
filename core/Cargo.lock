@@ -322,15 +322,9 @@ dependencies = [
 
 [[package]]
 name = "async-io"
-<<<<<<< HEAD:core/Cargo.lock
 version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f97ab0c5b00a7cdbe5a371b9a782ee7be1316095885c8a4ea1daf490eb0ef65"
-=======
-version = "2.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb41eb19024a91746eba0773aa5e16036045bbf45733766661099e182ea6a744"
->>>>>>> Initial work:Cargo.lock
 dependencies = [
  "async-lock 3.3.0",
  "cfg-if",
@@ -339,11 +333,7 @@ dependencies = [
  "futures-lite 2.2.0",
  "parking",
  "polling 3.3.2",
-<<<<<<< HEAD:core/Cargo.lock
  "rustix 0.38.31",
-=======
- "rustix 0.38.25",
->>>>>>> Initial work:Cargo.lock
  "slab",
  "tracing",
  "windows-sys 0.52.0",
@@ -4448,7 +4438,7 @@ dependencies = [
  "os_socketaddr",
  "pin-project-lite",
  "pin-utils",
- "rustix 0.38.25",
+ "rustix 0.38.31",
  "rustix-uring",
  "socket2 0.3.19",
 ]
@@ -4615,12 +4605,8 @@ dependencies = [
  "flagset",
  "foundationdb",
  "futures",
-<<<<<<< HEAD:core/Cargo.lock
- "getrandom 0.2.12",
-=======
  "futures-lite 2.2.0",
- "getrandom 0.2.11",
->>>>>>> Initial work:Cargo.lock
+ "getrandom 0.2.12",
  "governor",
  "hdfs-native",
  "hdrs",
@@ -5273,11 +5259,7 @@ dependencies = [
  "cfg-if",
  "concurrent-queue",
  "pin-project-lite",
-<<<<<<< HEAD:core/Cargo.lock
  "rustix 0.38.31",
-=======
- "rustix 0.38.25",
->>>>>>> Initial work:Cargo.lock
  "tracing",
  "windows-sys 0.52.0",
 ]
@@ -6411,8 +6393,8 @@ version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2f180cb36639fbd3e5e12812e1e18d3b93ca05648e94bc8edc8d48bf5089cace"
 dependencies = [
- "bitflags 2.4.1",
- "rustix 0.38.25",
+ "bitflags 2.4.2",
+ "rustix 0.38.31",
 ]
 
 [[package]]

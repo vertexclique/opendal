@@ -17,5 +17,7 @@
 
 mod backend;
 mod reader;
+mod writer;
+mod lister;
 
-pub use backend::NucleiFsBuilder as Nucleifs;
+pub use backend::NucleiFsBuilder as NucleiFs;

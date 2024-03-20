@@ -58,10 +58,10 @@ mod fs;
 #[cfg(feature = "services-fs")]
 pub use fs::Fs;
 
-#[cfg(feature = "services-nfs")]
+#[cfg(feature = "services-nucleifs")]
 mod nucleifs;
-#[cfg(feature = "services-nfs")]
-pub use nucleifs::Nfs;
+#[cfg(feature = "services-nucleifs")]
+pub use nucleifs::NucleiFs;
 
 #[cfg(feature = "services-ftp")]
 mod ftp;
